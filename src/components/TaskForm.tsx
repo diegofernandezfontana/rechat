@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Task } from "../domain/Task";
+import { Typography } from "@mui/material";
 
 const TaskForm = ({ onSubmit }: { onSubmit: (toimplement: any) => void }) => {
   const [title, setTitle] = useState("");
@@ -30,12 +31,15 @@ const TaskForm = ({ onSubmit }: { onSubmit: (toimplement: any) => void }) => {
         alignItems: "center",
         width: "80%",
         margin: "0 auto",
+        mb: 3,
       }}
       noValidate
       autoComplete="off"
     >
-      <Box sx={{ width: "100%", textAlign: "left" }}>
-        <h2>Add a new task</h2>
+      <Box sx={{ width: "100%", textAlign: "left", mt: 2 }}>
+        <Typography variant="h5" fontWeight="bold">
+          Add a new task
+        </Typography>
       </Box>
       <TextField
         label="Title"
@@ -54,12 +58,11 @@ const TaskForm = ({ onSubmit }: { onSubmit: (toimplement: any) => void }) => {
         fullWidth
         multiline
         rows={4}
-        margin="normal"
         variant="filled"
       />
       <Button
         type="submit"
-        sx={{ width: "100%" }}
+        sx={{ width: "100%", m: 1 }}
         variant="contained"
         color="primary"
         size="large"

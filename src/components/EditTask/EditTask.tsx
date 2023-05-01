@@ -9,6 +9,8 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  Box,
+  Typography,
 } from "@mui/material";
 
 import { useTaskContext } from "../../providers/useTaskContext";
@@ -66,60 +68,79 @@ const EditTask: React.FC<EditTaskProps> = ({ tasks, updateTask }) => {
 
   return (
     <>
-      <TextField
-        label="Title"
-        value={draftTitle}
-        onChange={(event) => setDraftTitle(event.target.value)}
-        required
-        fullWidth
-        margin="normal"
-        variant="filled"
-      />
-      <TextField
-        label="Description"
-        value={draftDescription}
-        onChange={(event) => setDraftDescription(event.target.value)}
-        required
-        fullWidth
-        multiline
-        rows={4}
-        margin="normal"
-        variant="filled"
-      />
-      <FormControl fullWidth margin="normal" variant="filled">
-        <InputLabel>Status</InputLabel>
-        <Select
-          value={draftStatus}
-          onChange={(event) => setDraftStatus(event.target.value as Status)}
-        >
-          {task.getTransitions().map((status) => (
-            <MenuItem key={status} value={status}>
-              {status}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <Button
-        type="submit"
-        sx={{ width: "50%" }}
-        variant="contained"
-        color="primary"
-        size="large"
-        onClick={handleUpdate}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "80%",
+          margin: "0 auto",
+        }}
       >
-        Edit
-      </Button>
-      <Link to="/">
-        <Button
-          type="submit"
-          sx={{ width: "50%" }}
-          variant="contained"
-          color="primary"
-          size="large"
-        >
-          Cancel
-        </Button>
-      </Link>
+        <Box sx={{ width: "100%", textAlign: "left", mt: 2 }}>
+          <Typography variant="h5" fontWeight="bold">
+            Edit Task
+          </Typography>
+        </Box>
+        <TextField
+          label="Title"
+          value={draftTitle}
+          onChange={(event) => setDraftTitle(event.target.value)}
+          required
+          fullWidth
+          margin="normal"
+          variant="filled"
+        />
+        <TextField
+          label="Description"
+          value={draftDescription}
+          onChange={(event) => setDraftDescription(event.target.value)}
+          required
+          fullWidth
+          multiline
+          rows={18}
+          variant="filled"
+        />
+        <FormControl fullWidth margin="normal" variant="filled">
+          <InputLabel>Status</InputLabel>
+          <Select
+            value={draftStatus}
+            onChange={(event) => setDraftStatus(event.target.value as Status)}
+          >
+            {task.getTransitions().map((status) => (
+              <MenuItem key={status} value={status}>
+                {status}
+              </MenuItem>
+            ))}
+          </Select>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Button
+              type="submit"
+              sx={{ flexGrow: 1, width: "100%", m: 1 }}
+              variant="contained"
+              color="primary"
+              size="large"
+              onClick={handleUpdate}
+            >
+              Edit
+            </Button>
+            <Button
+              type="submit"
+              sx={{ flexGrow: 1, width: "100%", m: 1 }}
+              variant="outlined"
+              color="inherit"
+              size="large"
+            >
+              <Link to="/">Cancel</Link>
+            </Button>
+          </Box>
+        </FormControl>
+      </Box>
     </>
   );
 };

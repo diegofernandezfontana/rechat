@@ -21,7 +21,8 @@ const TaskList: React.FC<TaskListProps> = ({ tasks = [] }) => {
         alignItems: "center",
         gap: 2,
         bgcolor: "lightblue",
-        minHeight: "100vh",
+        minHeight: "100%",
+        flexGrow: 1,
         margin: "2",
       }}
     >

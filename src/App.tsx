@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import TaskForm from "./components/TaskForm";
-import Navbar from "./components/Navbar";
 import TaskList from "./components/TaskList/TasksList";
 import { useTaskContext } from "./providers/useTaskContext";
 import { Task } from "./domain/Task";
