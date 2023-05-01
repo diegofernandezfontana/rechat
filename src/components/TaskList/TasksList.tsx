@@ -1,14 +1,9 @@
-import React from "react";
 import Box from "@mui/material/Box";
 import type { Task } from "../../domain/Task";
 import { TaskCard } from "./TaskCard";
 import { EmptyTaskList } from "./EmptyList";
 
-interface TaskListProps {
-  tasks: Task[];
-}
-
-const TaskList: React.FC<TaskListProps> = ({ tasks = [] }) => {
+const TaskList = ({ tasks = [] }: { tasks: Task[] }) => {
   if (!tasks.length) {
     return <EmptyTaskList />;
   }

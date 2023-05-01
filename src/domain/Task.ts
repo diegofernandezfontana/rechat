@@ -6,14 +6,14 @@ export type Status =
   | "Done"
   | "Deployed";
 
-export type TaskT = {
+export type TaskInfo = {
   id: string;
   title: string;
   description: string;
   status: Status;
 };
 
-export class Task implements TaskT {
+export class Task {
   constructor(
     public id: string,
     public title: string,

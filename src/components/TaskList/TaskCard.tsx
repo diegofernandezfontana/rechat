@@ -4,14 +4,14 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import { Link } from "react-router-dom";
-import { Task } from "../../domain/Task";
+import type { TaskInfo } from "../../domain/Task";
 
 export const TaskCard = ({
   id = "",
   title = "",
   description = "",
   status = "ToDo",
-}: Task) => {
+}: TaskInfo) => {
   return (
     <Card key={id} sx={{ width: "80%", bgcolor: "white" }}>
       <CardContent>
