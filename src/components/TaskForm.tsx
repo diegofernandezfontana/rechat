@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { Task } from "../domain/Task";
 
 const TaskForm = ({ onSubmit }: { onSubmit: (toimplement: any) => void }) => {
   const [title, setTitle] = useState("");
@@ -9,9 +10,14 @@ const TaskForm = ({ onSubmit }: { onSubmit: (toimplement: any) => void }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    onSubmit({ title, description });
-    setTitle("");
-    setDescription("");
+
+    if (Task.isValid(title, description)) {
+      onSubmit({ title, description });
+      setTitle("");
+      setDescription("");
+    } else {
+      alert("This is an invalid task");
+    }
   };
 
   return (
