@@ -15,11 +15,12 @@ export const TaskCard = ({
   return (
     <Card key={id} sx={{ width: "80%", bgcolor: "white" }}>
       <CardContent>
-        <Typography noWrap variant="h5">
+        <Typography noWrap variant="h6">
           {title}
         </Typography>
         <Typography
           sx={{
+            fontSize: "1rem",
             display: "-webkit-box",
             WebkitLineClamp: 3,
             WebkitBoxOrient: "vertical",
