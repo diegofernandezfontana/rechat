@@ -6,6 +6,7 @@ import { TaskProvider } from "./providers/TaskContext.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { EditTaskRoute } from "./components/EditTask/EditTask.tsx";
+import Navbar from "./components/Navbar.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <TaskProvider>
+      <Navbar />
       <RouterProvider router={router} />
     </TaskProvider>
   </React.StrictMode>

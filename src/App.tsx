@@ -22,7 +22,6 @@ function App() {
         margin: "2",
       }}
     >
-      <Navbar />
       <TaskForm onSubmit={handleFormSubmit} />
       <TaskList tasks={tasks} />
     </Box>
