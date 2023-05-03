@@ -36,7 +36,7 @@ const EditTask: React.FC<EditTaskProps> = ({ tasks, updateTask }) => {
   const [draftDescription, setDraftDescription] = useState<string>("");
   const [draftStatus, setDraftStatus] = useState<Status>("ToDo");
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const foundTask = tasks.find((task) => task.id === id);
