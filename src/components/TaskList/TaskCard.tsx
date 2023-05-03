@@ -6,12 +6,7 @@ import CardActions from "@mui/material/CardActions";
 import { Link } from "react-router-dom";
 import type { TaskInfo } from "../../domain/Task";
 
-export const TaskCard = ({
-  id,
-  title,
-  description,
-  status = "ToDo",
-}: TaskInfo) => {
+export const TaskCard = ({ id, title, description, status }: TaskInfo) => {
   return (
     <Card sx={{ width: "100%", bgcolor: "white" }} data-testid="TaskCard">
       <CardContent>

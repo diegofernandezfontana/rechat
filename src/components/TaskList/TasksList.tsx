@@ -49,8 +49,14 @@ const TaskList = ({ tasks = [] }: { tasks: Task[] }) => {
               m: 2,
             }}
           >
-            {tasks.map((task) => (
-              <TaskCard {...task} key={task.id} />
+            {tasks.map(({ id, description, title, status }) => (
+              <TaskCard
+                key={id + title}
+                status={status}
+                id={id}
+                title={title}
+                description={description}
+              />
             ))}
           </Box>
         </Box>
