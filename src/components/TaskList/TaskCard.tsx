@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 import type { TaskInfo } from "../../domain/Task";
 
 export const TaskCard = ({
-  id = "",
-  title = "",
-  description = "",
+  id,
+  title,
+  description,
   status = "ToDo",
 }: TaskInfo) => {
   return (
-    <Card key={id} sx={{ width: "100%", bgcolor: "white" }}>
+    <Card sx={{ width: "100%", bgcolor: "white" }} data-testid="TaskCard">
       <CardContent>
         <Typography noWrap variant="h6">
           {title}

@@ -19,7 +19,12 @@ export class Task {
     public title: string,
     public description: string,
     public status: Status
-  ) {}
+  ) {
+    this.id = id;
+    this.title = title;
+    this.description = description;
+    this.status = status;
+  }
 
   public static MIN_DESCRIPTION_LENGTH = 6;
 
@@ -29,7 +34,7 @@ export class Task {
 
   private static generateId() {
     // TODO improve id gen, use VO
-    return String(Math.floor(Math.random() * 100));
+    return String(Math.floor(Math.random() * 1000));
   }
 
   public static isValid(title: string, description: string) {
