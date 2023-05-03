@@ -16,6 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useTaskContext } from "../providers/useTaskContext";
+import { EditIcon } from "../assets/EditIcon";
 
 interface EditTaskProps {
   tasks: Task[];
@@ -127,19 +128,24 @@ const EditTask: React.FC<EditTaskProps> = ({ tasks, updateTask }) => {
               size="large"
               onClick={handleUpdate}
             >
-              Edit
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <EditIcon width="16px" height="16px" fill="white"></EditIcon>
+                <Typography variant="button" m={1}>
+                  Edit
+                </Typography>
+              </Box>
             </Button>
-            <Link to="/">
-              <Button
-                type="submit"
-                sx={{ flexGrow: 1, width: "100%", m: 1 }}
-                variant="outlined"
-                color="inherit"
-                size="large"
-              >
-                Cancel
-              </Button>
-            </Link>
+            <Button
+              type="submit"
+              sx={{ flexGrow: 1, width: "100%", m: 1 }}
+              variant="outlined"
+              color="inherit"
+              size="large"
+            >
+              <Link to="/">
+                <Box sx={{ display: "flex", alignItems: "center" }}>Cancel</Box>
+              </Link>
+            </Button>
           </Box>
         </FormControl>
       </Box>

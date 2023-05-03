@@ -5,6 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import { Link } from "react-router-dom";
 import type { TaskInfo } from "../../domain/Task";
+import { EditIcon } from "../../assets/EditIcon";
+import { Box } from "@mui/material";
 
 export const TaskCard = ({ id, title, description, status }: TaskInfo) => {
   return (
@@ -26,10 +28,18 @@ export const TaskCard = ({ id, title, description, status }: TaskInfo) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="contained">{status}</Button>
-        <Link to={`/${id}`}>
-          <Button>Edit</Button>
-        </Link>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexGrow: 1,
+          }}
+        >
+          <Button variant="contained">{status}</Button>
+          <Link to={`/${id}`}>
+            <EditIcon width="32px" height="32px" fill="black" />
+          </Link>
+        </Box>
       </CardActions>
     </Card>
   );
