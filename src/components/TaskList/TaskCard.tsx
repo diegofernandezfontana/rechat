@@ -13,7 +13,7 @@ export const TaskCard = ({
   status = "ToDo",
 }: TaskInfo) => {
   return (
-    <Card key={id} sx={{ width: "80%", bgcolor: "white" }}>
+    <Card key={id} sx={{ width: "100%", bgcolor: "white" }}>
       <CardContent>
         <Typography noWrap variant="h6">
           {title}
